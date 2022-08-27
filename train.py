@@ -56,7 +56,7 @@ class Discriminator(nn.Module):
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 transforms = transforms.Compose([
     transforms.ToTensor(),
-    transforms.Normalize((0.5), (0.5))
+    transforms.Normalize((0.5,), (0.5,))
 ])
 
 traindata = MNIST('./mnist', train=True, transform=transforms, download=True)
